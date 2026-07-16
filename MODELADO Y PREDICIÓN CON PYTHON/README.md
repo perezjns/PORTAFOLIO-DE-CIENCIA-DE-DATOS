@@ -1,31 +1,36 @@
 
 # 🎵 estudio_completo
 
-> *Un pipeline de extremo a extremo para la ciencia de datos musical.*
+> *Pipeline de Ingeniería de Datos y Modelado de Machine Learning para Spotify.*
 
-**estudio_completo** es una herramienta robusta diseñada para analizar, clasificar y predecir el éxito comercial y el género de canciones basándose en sus atributos acústicos. Este proyecto demuestra el ciclo de vida completo de un modelo de Machine Learning: desde la auditoría de datos hasta la creación de un predictor listo para producción.
-
----
-
-### 🛠 Tech Stack
-
-* ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-* ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-* ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+**estudio_completo** es un sistema modular diseñado para analizar, clasificar y predecir el éxito comercial y el género musical de pistas de Spotify utilizando sus atributos acústicos[cite: 1, 3].
 
 ---
 
-### 🏗️ Arquitectura del Pipeline
-
-El flujo de trabajo está diseñado de forma modular para garantizar la integridad y escalabilidad:
+### 🏗️ Fases del Pipeline
+El sistema ejecuta una secuencia lógica para garantizar la calidad e integridad del modelo[cite: 1, 3]:
 
 | Fase | Descripción |
 | :--- | :--- |
-| **Data Audit** | Limpieza de nulos, duplicados y auditoría de calidad. |
-| **Preprocessing** | Escalado con `MinMaxScaler`, binarización y feature selection. |
-| **EDA** | Visualización interactiva (Correlaciones, Distribuciones). |
-| **Regresión** | Modelos Lineales y *Random Forest* para predecir popularidad. |
-| **Clasificación** | SVM y *Random Forest* para categorización de géneros. |
+| **1-2** | **Carga y Definición:** Lectura de datos y establecimiento de *targets* (`popularity` y `track_genre`)[cite: 1, 3]. |
+| **Auditoría** | Limpieza automatizada de valores nulos y registros duplicados[cite: 1, 3]. |
+| **3** | **Preprocesamiento:** Escalado `MinMaxScaler` $[0, 1]$ y binarización de variables booleanas[cite: 1, 3]. |
+| **4-6** | **EDA y Correlación:** Análisis gráfico interactivo y estudio de colinealidad (Pearson)[cite: 1, 3]. |
+| **7-8** | **Regresión:** Modelado de popularidad con Regresión Lineal y *Random Forest* (MAE, RMSE, $R^2$)[cite: 1, 3]. |
+| **9-10** | **Clasificación:** Modelado de género con SVM y *Random Forest* (Precision, Recall, F1-Score)[cite: 1, 3]. |
+
+---
+
+### 🧪 Validación de Inferencia (Prueba Unitaria)
+Para validar el comportamiento en producción, el sistema realiza una prueba con una canción real, procesando los siguientes parámetros[cite: 1, 3]:
+
+*   **Atributos de Entrada**: 
+    `duration_ms: 215000`, `explicit: 0`, `danceability: 0.82`, `energy: 0.75`, `key: 5`, `loudness: -5.2`, `mode: 1`, `speechiness: 0.06`, `acousticness: 0.12`, `instrumentalness: 0.0`, `liveness: 0.08`, `valence: 0.88`, `tempo: 118.0`, `time_signature: 4`[cite: 1, 3].
+
+*   **Resultado de la Inferencia**:
+    El método `predecir_exito` procesa estos valores bajo el mismo escalador del entrenamiento para retornar[cite: 1, 3]:
+    1.  **Género Sugerido**: Clasificación lógica basada en hiperplanos del modelo[cite: 1, 3].
+    2.  **Popularidad Estimada**: Valor continuo (0-100) calculado por el ensamble *Random Forest*[cite: 1, 3].
 
 ---
 
@@ -35,42 +40,11 @@ El flujo de trabajo está diseñado de forma modular para garantizar la integrid
 ```bash
 git clone [https://github.com/tu-usuario/estudio_completo.git](https://github.com/tu-usuario/estudio_completo.git)
 cd estudio_completo
-2. Configurar entorno virtual
-
-Bash
-# macOS/Linux
-python3 -m venv venv && source venv/bin/activate
-
-# Windows
-python -m venv venv && venv\Scripts\activate
-3. Ejecución
-Asegúrate de tener spotify_tracks.csv en la raíz y ejecuta:
-
-Bash
-pip install -r requirements.txt
+2. EjecuciónAsegúrate de tener spotify_tracks.csv en la raíz y ejecuta:Bashpip install -r requirements.txt
 python estudio_completo.py
-Nota: El script abrirá ventanas gráficas interactivas. Ciérralas para avanzar a la siguiente fase.
+Nota: El script abrirá ventanas gráficas interactivas; es necesario cerrarlas para continuar con las fases del pipeline.  💡 Inferencia en ProducciónPythonfrom estudio_completo import SpotifyPredictor
 
-💡 Implementación en Producción
-El pipeline incluye una clase SpotifyPredictor encapsulada para facilitar la inferencia en tiempo real:
-
-Python
-from predictor import SpotifyPredictor
-
-# Inferencia rápida
-cancion_prueba = {'danceability': 0.82, 'energy': 0.75}
+# Inferencia rápida con el modelo entrenado
 resultado = predictor.predecir_exito(cancion_prueba)
-print(f"Predicción: {resultado}")
-📊 Modelos y Métricas
-Regresión: Evaluamos MAE, RMSE y R^2 para asegurar precisión en la popularidad.
-
-Clasificación: Reportes detallados de Precision, Recall y F1-Score para el género musical.
-
-🌟 ¿Qué hace especial a este proyecto?
-Diseño orientado a la producción: No solo analiza, sino que exporta un objeto listo para inferencia.
-
-Validación robusta: Uso de partición estratificada para evitar sesgos distributivos.
-
-Enfoque técnico: Uso de algoritmos no lineales (Random Forest) para capturar dinámicas complejas.
-
+print(f"Género: {resultado['genero_predicho']}, Popularidad: {resultado['popularidad_estimada']}")
 Desarrollado con pasión por los datos y la música. 🎸
