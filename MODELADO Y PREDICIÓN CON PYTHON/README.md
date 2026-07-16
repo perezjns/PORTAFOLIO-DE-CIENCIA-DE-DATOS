@@ -1,8 +1,11 @@
-# 🎵 Spotify ML Predictor
+Aquí tienes el código actualizado con el nombre del proyecto cambiado a estudio_completo. Recuerda copiar y pegar esto directamente en el editor de GitHub asegurándote de que los saltos de línea se mantengan:
+
+Markdown
+# 🎵 estudio_completo
 
 > *Un pipeline de extremo a extremo para la ciencia de datos musical.*
 
-Spotify ML Predictor es una herramienta robusta diseñada para analizar, clasificar y predecir el éxito comercial y el género de canciones basándose en sus atributos acústicos. Este proyecto demuestra el ciclo de vida completo de un modelo de Machine Learning: desde la auditoría de datos hasta la creación de un predictor listo para producción.
+**estudio_completo** es una herramienta robusta diseñada para analizar, clasificar y predecir el éxito comercial y el género de canciones basándose en sus atributos acústicos. Este proyecto demuestra el ciclo de vida completo de un modelo de Machine Learning: desde la auditoría de datos hasta la creación de un predictor listo para producción.
 
 ---
 
@@ -32,8 +35,8 @@ El flujo de trabajo está diseñado de forma modular para garantizar la integrid
 
 **1. Clonar el repositorio**
 ```bash
-git clone https://github.com/tu-usuario/spotify-ml-predictor.git
-cd spotify-ml-predictor
+git clone [https://github.com/tu-usuario/estudio_completo.git](https://github.com/tu-usuario/estudio_completo.git)
+cd estudio_completo
 2. Configurar entorno virtual
 
 Bash
