@@ -55,4 +55,5 @@ from estudio_completo import SpotifyPredictor
 # Inferencia rápida con el modelo entrenado
 resultado = predictor.predecir_exito(cancion_prueba)
 print(f"Género: {resultado['genero_predicho']}, Popularidad: {resultado['popularidad_estimada']}")
+
 Desarrollado con pasión por los datos y la música. 🎸
