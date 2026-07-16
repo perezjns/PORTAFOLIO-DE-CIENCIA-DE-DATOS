@@ -1,6 +1,4 @@
-Aquí tienes el código actualizado con el nombre del proyecto cambiado a estudio_completo. Recuerda copiar y pegar esto directamente en el editor de GitHub asegurándote de que los saltos de línea se mantengan:
 
-Markdown
 # 🎵 estudio_completo
 
 > *Un pipeline de extremo a extremo para la ciencia de datos musical.*
