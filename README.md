@@ -75,6 +75,6 @@ pip install -r requirements.txt
 
 GitHub: perezjsn
 
-LinkedIn: [Tu Nombre/Enlace aquí]
+LinkedIn: www.linkedin.com/in/jeanetteperezcarnota
 
-Email: [Tu Correo electrónico aquí]
+Email: jpcarnota@yahoo.es
