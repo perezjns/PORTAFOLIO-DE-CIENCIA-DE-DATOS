@@ -66,7 +66,7 @@ El sistema ejecuta una secuencia lógica para garantizar la calidad e integridad
 
 ### 1. Clonar el repositorio e instalar dependencias
 ```bash
-git clone [https://github.com/tu-usuario/SpotifyPredictor.git](https://github.com/tu-usuario/SpotifyPredictor.git)
+git clone [https://github.com/perezjns/SpotifyPredictor.git](https://github.com/perezjns/SpotifyPredictor.git)
 cd SpotifyPredictor
 pip install pandas numpy matplotlib seaborn scikit-learn
 2. Estructura del dataset
@@ -78,17 +78,17 @@ python main.py
 🧪 Experimentación y Resultados
 El script ejecuta un pipeline de pruebas exacto comparando diferentes arquitecturas:
 
-Modelos de Regresión (Popularidad)
+Modelos de Regresión (Predicción de Popularidad)
 Regresión Lineal Simple: Configurado como baseline rápido utilizando únicamente el índice de instrumentalidad (instrumentalness).
 
-Regresión Lineal Múltiple: Utiliza todo el espectro de características acústicas correlacionadas.
+Regresión Lineal Múltiple: Utiliza todo el espectro de características acústicas correlacionadas de forma lineal.
 
-Random Forest Regressor: Modelo ensemble configurado para capturar relaciones no lineales complejas.
+Random Forest Regressor: Modelo ensemble configurado para capturar relaciones y dependencias no lineales complejas.
 
 Modelos de Clasificación (Género Musical)
 SVM Lineal: Vector de soporte clásico optimizado mediante regularización C=1.0.
 
-Random Forest Classifier: Ajustado con pesos balanceados (class_weight='balanced') para mitigar cualquier desequilibrio en las muestras de entrenamiento.
+Random Forest Classifier: Ajustado con pesos balanceados (class_weight='balanced') para mitigar de forma automática cualquier desequilibrio en las muestras del dataset.
 
 💻 Ejemplo de Uso en Producción
 Puedes importar la clase integradora para realizar inferencias inmediatas sobre nuevas canciones sin necesidad de relanzar la etapa de experimentación:
