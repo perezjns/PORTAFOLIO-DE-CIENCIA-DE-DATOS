@@ -1,31 +1,9 @@
 
-# 🎵 estudio_completo
-
+---
+# SpotifyPredictor 🎵🤖 🎵 estudio_completo
 > *Pipeline de Ingeniería de Datos y Modelado de Machine Learning para Spotify.*
 
-**estudio_completo** es un sistema modular diseñado para analizar, clasificar y predecir el éxito comercial y el género musical de pistas de Spotify utilizando sus atributos acústicos.
-
----
-
-### 🏗️ Fases del Pipeline
-El sistema ejecuta una secuencia lógica para garantizar la calidad e integridad del modelo:
-
-| Fase | Descripción |
-| :--- | :--- |
-| **1-2** | **Carga y Definición:** Lectura de datos y establecimiento de targets (popularidad y género). |
-| **Auditoría** | Limpieza automatizada de valores nulos y registros duplicados. |
-| **3** | **Preprocesamiento:** Escalado MinMaxScaler [0, 1] y binarización de variables booleanas. |
-| **4-6** | **EDA y Correlación:** Análisis gráfico interactivo y estudio de colinealidad. |
-| **7-8** | **Regresión:** Modelado de popularidad con Regresión Lineal y Random Forest (MAE, RMSE, R²). |
-| **9-10** | **Clasificación:** Modelado de género con SVM y Random Forest (Precision, Recall, F1-Score). |
-
----
-Aquí tienes el contenido limpio, sin etiquetas de citación y listo para copiar en un solo clic:
-
-Markdown
-# SpotifyPredictor 🎵🤖
-
-¡Bienvenido a **SpotifyPredictor**! Este proyecto es un ecosistema completo de Machine Learning diseñado para auditar, analizar y predecir el comportamiento comercial y estilístico de pistas musicales en Spotify.
+¡Bienvenido a **SpotifyPredictor**! Este proyecto es un ecosistema completo de Machine Learning diseñado para auditar, analizar y predecir el comportamiento comercial y estilístico de pistas musicales en Spotify utilizando sus atributos acústicos.
 
 Utilizando un pipeline robusto en Python y Scikit-Learn, el sistema aborda de manera simultánea dos problemas fundamentales de la analítica de datos:
 1. **Regresión:** Estimación de la popularidad comercial de una canción (escala 0-100).
@@ -50,6 +28,21 @@ El núcleo del proyecto está estructurado bajo la clase de producción `Spotify
 
 
 ---
+
+### 🏗️ Fases del Pipeline 
+El sistema ejecuta una secuencia lógica para garantizar la calidad e integridad del modelo:
+
+| Fase | Descripción |
+| :--- | :--- |
+| **1-2** | **Carga y Definición:** Lectura de datos y establecimiento de targets (popularidad y género). |
+| **Auditoría** | Limpieza automatizada de valores nulos y registros duplicados. |
+| **3** | **Preprocesamiento:** Escalado MinMaxScaler [0, 1] y binarización de variables booleanas. |
+| **4-6** | **EDA y Correlación:** Análisis gráfico interactivo y estudio de colinealidad. |
+| **7-8** | **Regresión:** Modelado de popularidad con Regresión Lineal y Random Forest (MAE, RMSE, R²). |
+| **9-10** | **Clasificación:** Modelado de género con SVM y Random Forest (Precision, Recall, F1-Score). |
+
+---
+
 
 ## ⚡ Características Principales
 
