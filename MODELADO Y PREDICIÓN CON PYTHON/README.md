@@ -15,6 +15,7 @@ Utilizando un pipeline robusto en Python y Scikit-Learn, el sistema aborda de ma
 
 El núcleo del proyecto está estructurado bajo la clase de producción `SpotifyPredictor`, la cual encapsula todo el ciclo de vida del dato:
 
+```text
 +-------------------------------------------------------------+
 |                       SpotifyPredictor                      |
 +-------------------------------------------------------------+
@@ -25,7 +26,6 @@ El núcleo del proyecto está estructurado bajo la clase de producción `Spotify
 | + predict_popularity(new_track_features)                    |
 | + predict_genre(new_track_features)                         |
 +-------------------------------------------------------------+
-
 
 ---
 
