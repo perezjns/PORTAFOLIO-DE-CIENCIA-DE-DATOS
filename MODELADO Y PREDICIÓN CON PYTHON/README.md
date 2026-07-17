@@ -13,7 +13,7 @@ Utilizando un pipeline robusto en Python y Scikit-Learn, el sistema aborda de ma
 
 ## 📊 Arquitectura del Sistema
 
-El núcleo del proyecto está estructurado bajo la clase de producción `SpotifyPredictor`, la cual encapsula todo el ciclo de vida del dato:
+El núcleo del proyecto está estructurado bajo la clase de producción `SpotifyPredictor`, el cual encapsula todo el ciclo de vida del dato:
 
 ```text
 +-------------------------------------------------------------+
