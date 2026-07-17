@@ -33,7 +33,7 @@ El núcleo del proyecto está estructurado bajo la clase de producción `Spotify
 El sistema ejecuta una secuencia lógica para garantizar la calidad e integridad del modelo:
 
 | Fase | Descripción |
-| :--- | :--- |
+
 | **1-2** | **Carga y Definición:** Lectura de datos y establecimiento de targets (popularidad y género). |
 | **Auditoría** | Limpieza automatizada de valores nulos y registros duplicados. |
 | **3** | **Preprocesamiento:** Escalado MinMaxScaler [0, 1] y binarización de variables booleanas. |
