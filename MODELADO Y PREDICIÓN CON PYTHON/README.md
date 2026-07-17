@@ -1,6 +1,6 @@
 
 ---
-# SpotifyPredictor 🎵🤖 🎵 estudio_completo
+# SpotifyPredictor 🎵🤖 Archivo: estudio_completo
 > *Pipeline de Ingeniería de Datos y Modelado de Machine Learning para Spotify.*
 
 ¡Bienvenido a **SpotifyPredictor**! Este proyecto es un ecosistema completo de Machine Learning diseñado para auditar, analizar y predecir el comportamiento comercial y estilístico de pistas musicales en Spotify utilizando sus atributos acústicos.
