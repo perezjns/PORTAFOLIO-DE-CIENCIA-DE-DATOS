@@ -22,18 +22,30 @@ Este pipeline resuelve dichas inconsistencias aplicando reglas de negocio estric
 
 ## 🛠️ Arquitectura de la Solución
 
-El script `pipeline_inmuebles.py` está estructurado de forma limpia y modular a través de las siguientes etapas:
+El guión `pipeline_inmuebles.py` está estructurado de forma limpia y modular a través de las siguientes etapas:
 
-📥 [1. Extracción] --------> Carga controlada de 'inmuebles.csv'
-│
-📝 [2. Limpieza de Texto] -> Eliminación de espacios y normalización de mayúsculas/minúsculas
-│
-🔢 [3. Casteo de Tipos] ---> Conversión explícita de variables numéricas y fechas
-│
-🔮 [4. Tratamiento Nulos] -> Imputación inteligente mediante lógicas de agregación
-│
-📤 [5. Carga] -------------> Exportación del dataset limpio y validado
+📥 **[1. Extracción]**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── *Carga controlada de 'inmuebles.csv'*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼
+📝 **[2. Limpieza de Texto]**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── *Eliminación de espacios y normalización de mayúsculas/minúsculas*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼
+🔢 **[3. Casteo de Tipos]**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── *Conversión explícita de variables numéricas y fechas*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼
+🔮 **[4. Tratamiento de Nulos]**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── *Imputación inteligente mediante lógicas de agregación*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼
+📤 **[5. Carga]**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── *Exportación del conjunto de datos limpio y validado*
 
+---
+
+1. **Extracción:** Carga controlada del archivo `inmuebles.csv`.
+2. **Limpieza de Texto:** Eliminación de espacios en blanco excedentes y normalización de cadenas en variables categóricas.
+3. **Casteo de Tipos:** Conversión explícita de variables numéricas y tratamiento de series temporales (fechas).
+4. **Tratamiento de Nulos:** Imputación de datos faltantes mediante lógicas de agregación por zona y tipología.
+5. **Carga:** Exportación del conjunto de datos limpio y validado para su posterior consumo.
 
 1.  **Extracción:** Carga controlada del archivo `inmuebles.csv`.
 2.  **Limpieza de Texto:** Eliminación de espacios en blanco excedentes y normalización de cadenas en variables categóricas.
