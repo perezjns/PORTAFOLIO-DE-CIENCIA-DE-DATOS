@@ -1,6 +1,4 @@
-Aquí tienes la versión del README.md completamente limpia de cualquier referencia al "Archivo 301", manteniendo la estructura atractiva, organizada y colorida para tu repositorio:
 
-Markdown
 # 🏢 Canalización de Procesamiento de Datos Inmobiliarios
 
 Este repositorio contiene la solución automatizada para la ingesta, limpieza, normalización y transformación del catálogo de datos extraído de un mercado inmobiliario (`inmuebles.csv`).
