@@ -11,7 +11,7 @@
 
 ## 🔍 Sobre este Portafolio
 
-¡Bienvenido/a a mi espacio de Ciencia de Datos! En este repositorio comparto proyectos prácticos centrados en extraer valor de los datos, diseñar modelos predictivos y resolver problemas de negocio utilizando análisis estadístico y aprendizaje automático (*Machine Learning*).
+¡Bienvenido/a a mi espacio de Ciencia de Datos! En este repositorio comparto proyectos prácticos centrados en extraer valor de los datos, diseñar pipelines automatizados, construir modelos predictivos y resolver problemas de negocio utilizando análisis estadístico y aprendizaje automático (*Machine Learning*).
 
 ---
 
@@ -21,22 +21,24 @@ A continuación se detallan los bloques principales de este portafolio. Puedes n
 
 | Carpeta / Proyecto | Descripción | Tecnologías Clave |
 | :--- | :--- | :--- |
+| [📁 LIMPIEZA Y NORMALIZACIÓN DE DATOS](./LIMPIEZA%20Y%20NORMALIZACIÓN%20DE%20DATOS) | Automatización del tratamiento de datos mediante pipelines ETL robustos para catálogos inmobiliarios. | `Python`, `Pandas`, `ETL` |
 | [📁 MODELADO Y PREDICIÓN CON PYTHON](./MODELADO%20Y%20PREDICIÓN%20CON%20PYTHON) | Modelos predictivos de clasificación/regresión y análisis exploratorio de datos (EDA). | `Scikit-Learn`, `Pandas`, `Seaborn` |
 
 ---
 
-## 🚀 Proyecto Destacado: Modelado y Predicción con Python
+## 🚀 Proyectos Destacados
 
-Esta sección está dedicada al desarrollo de modelos predictivos de extremo a extremo (*End-to-End*), aplicando metodologías rigurosas para garantizar la precisión y la interpretabilidad de los resultados.
+### 🏢 1. Limpieza y Normalización de Datos (Pipeline Inmobiliario)
+Esta sección se enfoca en la ingeniería y preparación de datos (*Data Preparation*), transformando conjuntos de datos brutos e inconsistentes en activos de información fiables y listos para producción.
+* **Automatización:** Diseño de un pipeline modular (`pipeline_inmuebles.py`) bajo arquitectura limpia.
+* **Sanitización:** Tratamiento inteligente de valores nulos mediante lógicas de agregación por zonas y eliminación sistemática de duplicados y *outliers*.
 
-### 🛠️ Flujo de Trabajo Típico:
-1. **Análisis Exploratorio de Datos (EDA):** Identificación de valores atípicos (*outliers*), datos faltantes, correlaciones y distribución de variables mediante visualizaciones dinámicas.
-2. **Ingeniería de Características (*Feature Engineering*):** Normalización, escalado, codificación de variables categóricas (One-Hot Encoding) y selección de las variables más relevantes para el modelo.
-3. **Modelado:** Implementación y entrenamiento de algoritmos supervisados como:
-   * Regresión Lineal / Logística
-   * Árboles de Decisión y Random Forests
-   * Modelos de Boosting (XGBoost, LightGBM)
-4. **Evaluación:** Medición del rendimiento utilizando métricas robustas como $R^2$, RMSE (para regresión) o Accuracy, Precision, Recall y curvas ROC-AUC (para clasificación).
+### 🤖 2. Modelado y Predicción con Python
+Desarrollo de modelos predictivos de extremo a extremo (*End-to-End*), aplicando metodologías rigurosas para garantizar la precisión y la interpretabilidad de los resultados.
+
+* **Análisis Exploratorio de Datos (EDA):** Identificación de anomalías, correlaciones y distribución de variables mediante visualizaciones analíticas.
+* **Ingeniería de Características (*Feature Engineering*):** Normalización, escalado y codificación de variables categóricas.
+* **Modelado y Evaluación:** Implementación de algoritmos supervisados (regresiones, árboles de decisión, modelos de *boosting*) evaluados con métricas robustas como $R^2$, RMSE, precisión y curvas ROC-AUC.
 
 ---
 
@@ -50,7 +52,7 @@ Esta sección está dedicada al desarrollo de modelos predictivos de extremo a e
 
 ## ⚙️ Cómo Ejecutar los Proyectos Localmente
 
-Si deseas replicar los análisis y ejecutar los notebooks en tu máquina local, sigue estos sencillos pasos:
+Si deseas replicar los análisis y ejecutar los scripts o notebooks en tu máquina local, sigue estos sencillos pasos:
 
 1. **Clonar el repositorio:**
    ```bash
@@ -68,13 +70,13 @@ Instalar las dependencias necesarias:
 
 Bash
 pip install -r requirements.txt
-(Nota: Asegúrate de crear un archivo requirements.txt con las librerías utilizadas en tus notebooks).
+(Nota: Asegúrate de que el archivo requirements.txt contenga las librerías necesarias como pandas, numpy, scikit-learn, matplotlib y seaborn).
 
 ✉️ Contacto
 ¿Te interesa mi trabajo o te gustaría colaborar en algún proyecto? ¡Hablemos!
 
 GitHub: perezjsn
 
-LinkedIn: www.linkedin.com/in/jeanetteperezcarnota
+LinkedIn: Jeanette Pérez Carnota
 
 Email: jpcarnota@yahoo.es
