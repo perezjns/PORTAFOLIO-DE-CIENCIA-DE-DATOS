@@ -1,104 +1,80 @@
-# Pipeline de ETL e Integración de Datos Dinámica
+Tienes toda la razón del mundo. Me he pasado de frenada metiendo código real en el README.md cuando lo que buscas es una explicación clara, estructurada y limpia del proyecto, no un duplicado de tu script de Python. El código ya está en tu archivo .py; el README debe centrarse en documentar el proyecto de forma ágil y visual.
 
-Este repositorio contiene un pipeline de ingeniería de datos en **Python** diseñado para unificar, limpiar y analizar fuentes de datos heterogéneas. El script automatiza la consolidación de un modelo relacional a partir de tres orígenes de datos con estructuras y formatos complejos.
+Además, veo en la captura que GitHub sigue rompiendo la estructura de bloques mezclando los títulos finales con el texto anterior si no hay un salto de línea limpio.
+
+Vamos a solucionarlo de raíz. Aquí tienes una versión completamente limpia, directa y conceptual, eliminando los bloques gigantes de código y enfocándome puramente en la organización del repositorio y en qué consiste tu pipeline:
+
+Markdown
+# 📊 Pipeline de ETL e Integración de Datos
+
+Este repositorio contiene una solución automatizada en **Python** y **Pandas** para unificar, auditar y analizar fuentes de datos heterogéneas procedentes de múltiples orígenes de negocio.
 
 ---
 
-## 🛠️ Arquitectura del Pipeline (Apartado 0)
+## 🏗️ Arquitectura de Integración (Apartado 0)
 
-El núcleo del desarrollo resuelve la ingesta y el acoplamiento de tres fuentes de información con formatos conflictivos:
+El pipeline consolida un **DataFrame Maestro** unificado a partir de tres orígenes de datos con estructuras y formatos complejos:
 
-*   **`pedidos.csv`**: Histórico de transacciones codificado en `UTF-16` con delimitador de tubería (`|`).
-*   **`productos.db`**: Base de datos relacional en `SQLite` que contiene el catálogo maestro e inventarios.
-*   **`clientes.json`**: Estructura de documentos con anidamiento multinivel para perfiles de usuarios.
+*   **`pedidos.csv`**: Histórico transaccional codificado en `UTF-16` con delimitador de tubería (`|`).
+*   **`productos.db`**: Catálogo relacional administrado en `SQLite` con información de inventario y costes.
+*   **`clientes.json`**: Registro de usuarios estructurado mediante objetos anidados multinivel.
 
-### Flujo de Unificación
 📥 pedidos.csv (UTF-16, '|') ──┐
-📥 productos.db (SQLite)     ──┼─► [ Limpieza e Inyección de Tipos ] ─► 🛒 DataFrame Maestro
+📥 productos.db (SQLite)     ──┼─► [ Limpieza e Ingesta Relacional ] ─► 🛒 DataFrame Maestro
 📥 clientes.json (Anidado)   ──┘
 
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📁 Estructura del Repositorio
 
-El script implementa detección dinámica de rutas relativas, por lo que basta con mantener los archivos en el mismo directorio raíz:
+El script implementa rutas relativas dinámicas, por lo que detecta automáticamente los archivos maestros siempre que se mantenga la siguiente estructura en la raíz:
 
 ```text
 📁 tu-repositorio/
-├── 📄 main.py            # Pipeline principal y bloques analíticos (Apartados 0-18)
-├── 📄 pedidos.csv        # Archivo de transacciones estructurado
+├── 📄 main.py            # Pipeline principal y ejecución de bloques analíticos
+├── 📄 pedidos.csv        # Historial de transacciones
 ├── 📄 productos.db       # Base de datos SQLite
-└── 📄 clientes.json      # Estructura JSON anidada
-🚀 Instalación y Ejecución
-Clonar el repositorio e instalar dependencias:
+└── 📄 clientes.json      # Archivo JSON anidado
+🚀 Guía de Uso Rápido
+Instalar dependencias necesarias:
 
 Bash
 pip install pandas
-Ejecutar el pipeline analítico:
+Ejecutar el análisis global:
 
 Bash
 python main.py
-🔬 Core Analítico e Integridad de Datos
-El script ejecuta de forma secuencial 18 módulos de auditoría y análisis estadístico:
+🔬 Módulos Analíticos del Script (Apartados 1 al 18)
+El software procesa de forma secuencial la información a través de 18 bloques lógicos estructurados en cuatro fases clave:
 
-Fase 1: Consolidación y Limpieza (0 - 3): Normalización de JSON, control estricto de tipos de datos (Data Types), cálculo de métricas centrales (Media, Mediana, Moda) y mapeo de valores nulos.
+1. Control de Calidad e Integridad (Apartados 1 - 3)
+Aplanamiento dinámico de datos anidados (pd.json_normalize).
 
-Fase 2: Segmentación Avanzada (4 - 6): Máscaras booleanas complejas para la detección de pedidos críticos/Premium e ingeniería de variables temporales (dt.day_name, análisis trimestral).
+Auditoría de consistencia física y cálculo de porcentajes de valores nulos.
 
-Fase 3: Agrupaciones y KPIs (7 - 12): Agregaciones multidimensionales (.groupby().agg()) para analizar pasarelas de pago, métricas demográficas y comportamiento geográfico.
+Homologación estricta de tipos de datos (Data Types) y métricas centrales (Media, Mediana, Moda).
 
-Fase 4: Diagnóstico de Calidad (13 - 18): Control de rotación de stock, análisis de dispersión física y auditoría de registros duplicados.
+2. Segmentación Avanzada (Apartados 4 - 6)
+Filtrado mediante máscaras booleanas compuestas para aislar transacciones críticas.
 
-💻 Implementación Clave: Ingesta Dinámica y Merge
-Fragmento de código del Apartado 0 centrado en el aplanamiento del JSON jerárquico y la homologación estricta de llaves foráneas (Foreign Keys) para evitar pérdidas de registros en el cruce:
+Ingeniería de variables temporales para análisis estacionales por día y trimestre.
 
-Python
-import json
-import pandas as pd
+3. Agregaciones y KPIs (Apartados 7 - 12)
+Cálculo de métricas de negocio agrupadas por canales de pago y datos demográficos.
 
-# 1. Carga y aplanado nativo de estructuras anidadas
-with open('clientes.json', 'r', encoding='utf-8') as f:
-    data_clientes = json.load(f)
+Extracción automatizada de clasificaciones (Top 5 destinos principales).
 
-clientes = pd.json_normalize(data_clientes)
-clientes = clientes.rename(columns={
-    'direccion.pais': 'País envío',
-    'direccion.ciudad': 'ciudad'
-})
+4. Diagnóstico de Inventario (Apartados 13 - 18)
+Control de rotación de stock por categorías y auditoría de registros duplicados.
 
-# 2. Homologación de tipos para evitar fallos de coincidencia por espacios o formatos
-pedidos['id_producto'] = pedidos['id_producto'].astype(str).str.strip()
-productos['id_producto'] = productos['id_producto'].astype(str).str.strip()
+📊 Reporte de Salida
+Al completarse la ejecución, la consola despliega un informe limpio detallando las dimensiones detectadas, el estado de la ingesta relacional y el resumen analítico de cada apartado.
 
-# 3. Construcción del DataFrame Maestro mediante Left Joins
-pedidos_productos = pd.merge(pedidos, productos, how="left", on="id_producto")
-df_maestro = pd.merge(pedidos_productos, clientes, how="left", on="id_cliente")
-📊 Reporte de Salida en Consola
-Al ejecutar main.py, la terminal genera un reporte estructurado y limpio dividido por secciones:
-
-Plaintext
-======================================================================
-[APARTADO 0] Proceso de normalización e ingesta relacional completado.
-======================================================================
--> Registros unificados correctamente en DataFrame Maestro.
-
-[APARTADO 1 & 2] Auditoría de Integridad Física:
-- Dimensiones del Dataset: (XXXX, XX)
-- Porcentaje de valores nulos detectados:
-  id_pedido     0.0%
-  total         1.2%
-  ...
-
-[APARTADO 3] Análisis Descriptivo Central:
-- Media de facturación: XXX.XX
-- Mediana de transacciones: XXX.XX
-
---> Ejecución finalizada con éxito. Datos listos para capas de BI o Modelado.
 
 ***
 
-### ¿Qué ha cambiado en este rediseño?
-1. **Adiós al apelotonamiento:** Se agregaron saltos de línea estratégicos (`\n`) y triples acentos graves (```) cerrados correctamente para forzar a GitHub a interpretar el código y el texto por separado.
-2. **Tono Profesional:** Se eliminó el relleno genérico y se orientó a terminología real de ingeniería de datos (*Left Joins, Aplanamiento nativo, Inyección de tipos, Dataframe Maestro*).
-3. **Mapeo Claro:** La tabla redundante se cambió por un desglose de fases mucho más limpio de los 18 apartados de tu script.
+### ¿Qué mejoras incluye este diseño?
+*   **Cero código redundante:** Eliminados por completo los bloques de Python que sobrecargaban la lectura.
+*   **Enfoque funcional:** Explica detalladamente *qué hace* tu script en cada una de sus fases (del Apartado 1 al 18) en lugar de mostrar cómo está programado.
+*   **Formateo a prueba de fallos:** Se añadieron separadores estrictos y espaciados limpios para garantiza
