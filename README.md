@@ -1,88 +1,62 @@
-# 📊 Portafolio de Ciencia de Datos
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
-  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white" alt="Matplotlib" />
-  <img src="https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=seaborn&logoColor=white" alt="Seaborn" />
-  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn" />
-</p>
-
----
+# 📊 Portafolio de Ciencia de Datos & Ingeniería de Datos
 
 ## 🔍 Sobre este Portafolio
 
-¡Bienvenido/a a mi espacio de Ciencia de Datos! En este repositorio comparto proyectos prácticos centrados en extraer valor de los datos, diseñar pipelines automatizados, construir modelos predictivos y resolver problemas de negocio utilizando análisis estadístico y aprendizaje automático (*Machine Learning*).
+¡Bienvenido a mi espacio de Ciencia de Datos e Ingeniería de Datos! En este repositorio comparto proyectos prácticos enfocados en extraer valor real de los datos, diseñar pipelines automatizados de extremo a extremo (End-to-End), construir modelos predictivos y resolver problemas de negocio complejos mediante análisis estadístico y aprendizaje automático (*Machine Learning*).
 
 ---
 
 ## 📁 Estructura del Repositorio
 
-A continuación se detallan los bloques principales de este portafolio. Puedes navegar directamente a cada sección haciendo clic en los enlaces:
+A continuación se detallan los bloques principales que componen este portafolio. Puedes acceder directamente a cada sección explorando las carpetas del repositorio:
 
 | Carpeta / Proyecto | Descripción | Tecnologías Clave |
 | :--- | :--- | :--- |
-| [📁 ANÁLISIS EXPLORATORIO DE DATOS CON PYTHON](./ANÁLISIS%20EXPLORATORIO%20DE%20DATOS%20CON%20PYT...) | Diagnóstico estadístico, limpieza transaccional y visualización avanzada de series de ventas globales. | `Python`, `Seaborn`, `Estadística` |
-| [📁 LIMPIEZA Y NORMALIZACIÓN DE DATOS](./LIMPIEZA%20Y%20NORMALIZACIÓN%20DE%20DATOS) | Automatización del tratamiento de datos mediante pipelines ETL robustos para catálogos inmobiliarios. | `Python`, `Pandas`, `ETL` |
-| [📁 MODELADO Y PREDICIÓN CON PYTHON](./MODELADO%20Y%20PREDICIÓN%20CON%20PYTHON) | Modelos predictivos de clasificación/regresión y análisis de variables avanzadas. | `Scikit-Learn`, `Pandas`, `Métricas` |
+| **📁 ANÁLISIS EXPLORATORIO DE DATOS CON PYTHON** | Diagnóstico estadístico, limpieza transaccional y visualización avanzada de series de ventas globales. | Python, Seaborn, Estadística |
+| **📁 GESTIÓN DE ARCHIVOS MULTIFORMATO CON PYTHON** | Ingesta, normalización y cruce relacional dinámico de fuentes heterogéneas (CSV, SQLite, JSON anidados). | Python, Pandas, SQLite, JSON |
+| **📁 LIMPIEZA Y NORMALIZACIÓN DE DATOS** | Automatización del tratamiento y curación de datos mediante pipelines ETL robustos para catálogos inmobiliarios. | Python, Pandas, ETL |
+| **📁 MODELADO Y PREDICCIÓN CON PYTHON** | Construcción de modelos predictivos de clasificación/regresión y optimización de hiperparámetros. | Scikit-Learn, Pandas, Métricas |
 
 ---
 
 ## 🚀 Proyectos Destacados
 
 ### 📉 1. Análisis Exploratorio de Datos (Histórico Global de Ventas)
-Esta sección aborda un estudio analítico profundo enfocado en la depuración transaccional y la evaluación de tendencias estacionales del negocio.
-* **Depuración y Calidad del Dato:** Filtrado de registros corruptos (`###ERROR###`, `-99999`) y aislamiento de duplicados basados en cambios lógicos de estado.
-* **Análisis de Series Temporales:** Modelado cronológico de ingresos mensuales consolidados, identificando valles de mercado y picos de facturación históricos.
-* **Evaluación de Dispersión:** Análisis estadístico de correlaciones empleando escalas logarítmicas para corregir la alta variabilidad en precios unitarios y volúmenes de pedido.
+Este módulo aborda un estudio analítico profundo enfocado en la depuración transaccional y la evaluación de tendencias estacionales del negocio.
+*   **Depuración y Calidad del Dato:** Filtrado sistemático de registros corruptos (`###ERROR###`, `-99999`) y aislamiento de duplicados basados en lógica de estados.
+*   **Análisis de Series Temporales:** Modelado cronológico de ingresos mensuales consolidados, identificando valles de mercado y picos de facturación históricos.
+*   **Evaluación de Dispersión:** Análisis estadístico de correlaciones empleando escalas logarítmicas para corregir la alta variabilidad en precios unitarios y volúmenes de pedido.
 
-### 🏢 2. Limpieza y Normalización de Datos (Pipeline Inmobiliario)
-Esta sección se enfoca en la ingeniería y preparación de datos (*Data Preparation*), transformando conjuntos de datos brutos e inconsistentes en activos de información fiables y listos para producción.
-* **Automatización:** Diseño de un pipeline modular (`pipeline_inmuebles.py`) bajo arquitectura limpia.
-* **Sanitización:** Tratamiento inteligente de valores nulos mediante lógicas de agregación por zonas y eliminación de *outliers*.
+### ⚙️ 2. Gestión de Archivos Multiformato
+Implementación de un cargador relacional dinámico capaz de unificar y normalizar orígenes de datos con estructuras conflictivas.
+*   **Ingesta Heterogénea:** Procesamiento simultáneo de archivos logísticos en CSV (`UTF-16`, separador `|`), bases de datos relacionales SQLite y archivos JSON con anidamiento multinivel.
+*   **Robustez Relacional:** Aplanamiento de datos demográficos y geográficos mediante `pd.json_normalize` junto con homologación estricta de tipos de datos en llaves foráneas para evitar la pérdida de registros.
 
-### 🤖 3. Modelado y Predicción con Python
-Desarrollo de modelos predictivos de extremo a extremo (*End-to-End*), aplicando metodologías rigurosas para garantizar la precisión y la interpretabilidad de los resultados.
-* **Ingeniería de Características (*Feature Engineering*):** Normalización, escalado y codificación de variables categóricas.
-* **Modelado y Evaluación:** Implementación de algoritmos supervisados evaluados con métricas robustas como $R^2$, RMSE, precisión y curvas ROC-AUC.
+### 🏢 3. Limpieza y Normalización de Datos (Pipeline Inmobiliario)
+Ingeniería y preparación de datos (*Data Preparation*) avanzada, transformando conjuntos de datos brutos e inconsistentes en activos de información confiables listos para producción.
+*   **Automatización:** Diseño de un pipeline modular (`pipeline_inmuebles.py`) bajo una arquitectura limpia y reutilizable.
+*   **Sanitización Inteligente:** Imputación avanzada de valores nulos mediante lógicas de agregación por zonas geográficas y eliminación controlada de valores atípicos (*outliers*).
+
+### 🤖 4. Modelado y Predicción con Python
+Desarrollo de modelos predictivos con metodologías rigurosas para garantizar tanto la precisión matemática como la interpretabilidad de los resultados.
+*   **Ingeniería de Características (*Feature Engineering*):** Normalización, escalado estadístico y codificación avanzada de variables categóricas.
+*   **Modelado y Evaluación:** Implementación de algoritmos supervisados evaluados mediante métricas robustas de rendimiento ($R^2$, RMSE, precisión y curvas ROC-AUC).
 
 ---
 
-## 🛠️ Tecnologías & Herramientas
+## 🛠️ Tecnologías y Herramientas
 
-* **Lenguajes & Librerías:** Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn)
-* **Entornos:** Jupyter Notebooks, VS Code
-* **Control de Versiones:** Git & GitHub
+*   **Lenguajes y Librerías:** Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn, SQLite3)
+*   **Entornos de Trabajo:** Jupyter Notebooks, VS Code
+*   **Control de Versiones:** Git y GitHub
 
 ---
 
 ## ⚙️ Cómo Ejecutar los Proyectos Localmente
 
-Si deseas replicar los análisis y ejecutar los scripts o notebooks en tu máquina local, sigue estos sencillos pasos:
+Si deseas replicar los análisis y ejecutar los scripts o notebooks en tu entorno local, sigue estos pasos:
 
 1. **Clonar el repositorio:**
    ```bash
    git clone [https://github.com/perezjsn/PORTAFOLIO-DE-CIENCIA-DE-DATOS.git](https://github.com/perezjsn/PORTAFOLIO-DE-CIENCIA-DE-DATOS.git)
    cd PORTAFOLIO-DE-CIENCIA-DE-DATOS
-Crear y activar un entorno virtual (Recomendado):
-
-Bash
-python -m venv env
-# En Windows:
-env\Scripts\activate
-# En macOS/Linux:
-source env/bin/activate
-Instalar las dependencias necesarias:
-
-Bash
-pip install -r requirements.txt
-(Nota: Asegúrate de que el archivo requirements.txt contenga las librerías necesarias como pandas, numpy, scikit-learn, matplotlib y seaborn).
-
-✉️ Contacto
-¿Te interesa mi trabajo o te gustaría colaborar en algún proyecto? ¡Hablemos!
-
-GitHub: perezjsn
-
-LinkedIn: Jeanette Pérez Carnota
-
-Email: jpcarnota@yahoo.es
