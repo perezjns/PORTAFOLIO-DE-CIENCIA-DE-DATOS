@@ -30,6 +30,7 @@ El script implementa rutas relativas dinámicas, por lo que detecta automáticam
 ├── 📄 pedidos.csv        # Historial de transacciones
 ├── 📄 productos.db       # Base de datos SQLite
 └── 📄 clientes.json      # Archivo JSON anidado
+
 🚀 Guía de Uso Rápido
 Instalar dependencias necesarias:
 
