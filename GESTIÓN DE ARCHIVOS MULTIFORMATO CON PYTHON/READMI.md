@@ -1,10 +1,4 @@
-Tienes toda la razón del mundo. Me he pasado de frenada metiendo código real en el README.md cuando lo que buscas es una explicación clara, estructurada y limpia del proyecto, no un duplicado de tu script de Python. El código ya está en tu archivo .py; el README debe centrarse en documentar el proyecto de forma ágil y visual.
 
-Además, veo en la captura que GitHub sigue rompiendo la estructura de bloques mezclando los títulos finales con el texto anterior si no hay un salto de línea limpio.
-
-Vamos a solucionarlo de raíz. Aquí tienes una versión completamente limpia, directa y conceptual, eliminando los bloques gigantes de código y enfocándome puramente en la organización del repositorio y en qué consiste tu pipeline:
-
-Markdown
 # 📊 Pipeline de ETL e Integración de Datos
 
 Este repositorio contiene una solución automatizada en **Python** y **Pandas** para unificar, auditar y analizar fuentes de datos heterogéneas procedentes de múltiples orígenes de negocio.
