@@ -36,6 +36,7 @@ El script implementa detección dinámica de rutas, por lo que localiza automát
 ├── 📄 pedidos.csv        # Historial de transacciones
 ├── 📄 productos.db       # Base de datos SQLite
 └── 📄 clientes.json      # Archivo JSON anidada
+
 🚀 Guía de Uso Rápido
 Instalar dependencias necesarias:
 
@@ -50,29 +51,30 @@ El core del software procesa la información de manera secuencial a través de 1
 
 Control de Calidad e Integridad (Apartados 1 - 3)
 
-Aplanamiento dinámico de estructuras anidadas mediante pd.json_normalize.
+   Aplanamiento dinámico de estructuras anidadas mediante pd.json_normalize.
 
-Auditoría de consistencia física con cálculo automatizado de porcentajes de nulos.
+   Auditoría de consistencia física con cálculo automatizado de porcentajes de nulos.
 
-Homologación estricta de tipos de datos (Data Types) y cálculo de métricas centrales (Media, Mediana, Moda).
+   Homologación estricta de tipos de datos (Data Types) y cálculo de métricas centrales (Media, Mediana, Moda).
 
 Segmentación Avanzada (Apartados 4 - 6)
 
-Filtrado avanzado con máscaras booleanas compuestas para aislar transacciones críticas.
+   Filtrado avanzado con máscaras booleanas compuestas para aislar transacciones críticas.
 
-Ingeniería de variables temporales para análisis estacionales (dt.day_name y trimestres).
+   Ingeniería de variables temporales para análisis estacionales (dt.day_name y trimestres).
 
 Agregaciones y KPIs de Negocio (Apartados 7 - 12)
 
-Cálculo de métricas de rendimiento agrupadas por canales de pago y datos demográficos.
+   Cálculo de métricas de rendimiento agrupadas por canales de pago y datos demográficos.
 
-Extracción y ordenación automatizada de clasificaciones geográficas (Top 5 destinos principales).
+   Extracción y ordenación automatizada de clasificaciones geográficas (Top 5 destinos principales).
 
 Diagnóstico de Inventario y Calidad (Apartados 13 - 18)
 
-Control de rotación de stock y disponibilidad física por categorías de producto.
+   Control de rotación de stock y disponibilidad física por categorías de producto.
 
-Auditoría final de la base de datos para la detección y depuración de registros duplicados.
+   Auditoría final de la base de datos para la detección y depuración de registros duplicados.
 
 📊 Reporte de Salida en Consola
+
 💡 Nota de ejecución: Al completarse el proceso, la terminal despliega de forma limpia un informe detallado con las dimensiones detectadas, el estado de las uniones relacionales y el resumen analítico estructurado de cada apartado listo para su consumo.
