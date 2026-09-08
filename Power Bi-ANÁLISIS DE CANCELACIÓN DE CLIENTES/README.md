@@ -1,0 +1,31 @@
+# Estudio de Caso: Análisis de Cancelación de Clientes (*Customer Churn*) en Power BI
+
+## **Descripción del Proyecto**
+
+Para las empresas basadas en suscripciones, reducir la cancelación o abandono de clientes (*churn*) es una prioridad absoluta. En este estudio de caso en Power BI, investigaremos un conjunto de datos de una empresa de telecomunicaciones ficticia llamada Databel y analizaremos sus tasas de cancelación. Analizar la cancelación no se trata solo de saber cuál es la tasa de abandono: también consiste en averiguar por qué los clientes están cancelando a ese ritmo y cómo reducirlo. Responderemos a estas preguntas creando **medidas** y **columnas calculadas**, mientras diseñamos simultáneamente las páginas del informe.
+
+---
+
+## **Análisis Exploratorio**
+
+En esta etapa realizaremos un análisis exploratorio de datos. Exploraremos el nuevo conjunto de datos y repasaremos la creación de medidas en Power BI para comprender mejor por qué los clientes cancelan sus contratos. A lo largo de este proceso exploratorio se llevarán a cabo las siguientes tareas: 
+
+* **Verificación de datos:** Verificamos si existen filas duplicadas en la tabla. Para comprobarlo, creamos dos medidas que nos permiten verificar si el conteo total de IDs de clientes es igual al conteo de IDs de clientes únicos: `Number of Customers = COUNT('Databel - Data'[Customer ID])` y `Number of Unique Customers = DISTINCTCOUNT('Databel - Data'[Customer ID])`.
+* **Cálculo de la cancelación (*Churn*):** Esto es lo primero que debemos determinar antes de profundizar en el análisis. Existe una columna llamada `Churn Label` que indica "Yes" o "No", pero no es la más práctica para trabajar. Convertiremos esta columna en una columna binomial que indique si el cliente canceló o no mediante `Churned = IF('Databel - Data'[Churn Label] = "Yes", 1, 0)`. A continuación, utilizaremos esa variable para calcular la tasa de cancelación: `Churn_rate = DIVIDE([Number of Churned Customers], [Number of Customers])`.
+* **Investigación de las razones de cancelación:** Una vez obtenida la tasa de cancelación, el siguiente paso lógico es investigar los diferentes motivos por los que los clientes cancelaron. Estas son las tres razones principales que encontramos: 1. La competencia ofreció una mejor propuesta, 2. La competencia disponía de mejores dispositivos, 3. La actitud del personal de soporte técnico.
+* **Profundizando en las categorías de cancelación:** Las razones de cancelación (`Churn Reasons`) se agrupan en la columna `Churn Category`. Los cobros por exceso de datos ("Extra Data charges"), precios elevados ("Price too high") y otros motivos financieros se agrupan bajo la categoría "Price". Encontramos que la categoría de cancelación más prevalente es **Competitor** (Competencia).
+* **Uso de mapas:** La competencia ha lanzado promociones agresivas en ciertos estados y Databel quiere saber si esto ha impactado en sus clientes. Utilizaremos un mapa para visualizar la tasa de cancelación por estado. Hallamos que el estado con mayor tasa de cancelación es **CA** (California), con un **63.24%**.
+
+---
+
+## **Investigación de Patrones de Cancelación**
+
+En esta segunda etapa investigaré todos los patrones de cancelación posibles para identificar por qué se van los clientes. Las tareas desarrolladas en esta fase son:
+
+* **Análisis demográfico:** En esta tarea analizaremos los diferentes campos demográficos del conjunto de datos y crearemos una tabla para investigar patrones de abandono. Agruparemos las variables demográficas categorizadas según la edad en una nueva columna llamada `Demographics = IF('Databel - Data'[Senior] = "Yes", "Senior", IF('Databel - Data'[Under 30] = "Yes", "Under 30", "Other"))`. Encontramos que la tasa de cancelación para los adultos mayores (*senior citizens*) es del **38.46%**, un valor significativamente superior al promedio.
+* **Grupos de edad (Rangos/Bins de Edad):** Dado que observamos que los adultos mayores cancelan con mayor frecuencia, esto sugiere que sería conveniente analizar la edad del cliente de forma general. Crearemos rangos de edad (*age bins*) para investigar sus respectivas tasas de abandono. Encontramos que, a medida que aumenta la edad, la tasa promedio de cancelación por rango etario también se incrementa.
+* **Inspección de grupos de clientes:** Analizamos si los clientes que forman parte de un plan grupal tienen efectivamente una factura telefónica más baja y si esto influye en la tasa de cancelación. Se observa que la tarifa mensual (`Monthly Charge`) es significativamente menor para las personas que están en un grupo de 2 o más miembros. Reforzamos este hallazgo añadiendo el campo `Group`.
+* **Múltiples campos a investigar:** Al revisar la información de metadatos, vemos tres tipos de contrato: "One Year" (Un año), "Two Year" (Dos años) y "Month-to-Month" (Mes a mes). Es aconsejable agrupar los contratos anuales en una sola categoría mediante `Contract Category = SWITCH('Databel - Data'[Contract Type], "One Year", "Yearly", "Two Year", "Yearly", "Monthly")`. Descubrimos que los clientes con contrato mensual cancelan con mayor frecuencia que aquellos que tienen contratos anuales.
+* **Plan ilimitado:** Databel plantea la hipótesis de que los clientes que no tienen un plan de datos ilimitado son más propensos a cancelar. Sin embargo, el análisis muestra que los clientes que **sí** cuentan con un plan ilimitado tienen mayor probabilidad de cancelar. A continuación, crearemos una nueva columna llamada `Grouped Consumption = IF('Databel - Data'[Avg Monthly GB Download] < 5, "Light Data User", IF('Databel - Data'[Avg Monthly GB Download] > 10, "Heavy User", "Medium User"))`. Encontramos que la tasa de cancelación más alta corresponde a los usuarios de bajo consumo de datos ("Light Data Users") que tienen contratado un plan ilimitado.
+* **Llamadas internacionales:** En esta sección analizamos la actividad internacional de los clientes y su relación con el abandono. Descubrimos que la tasa de cancelación de los clientes que pagan un plan internacional pero no realizan llamadas internacionales es sumamente alta.
+* **Recomendación para Databel:** Una recomendación clave para Databel es: *"Contactar a los clientes que poseen un plan internacional pero no realizan llamadas internacionales y proponerles un cambio a un plan inferior (downgrade)"*.
