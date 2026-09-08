@@ -1,4 +1,4 @@
-# 📊 # Estudio de Caso: Análisis de Cancelación de Clientes (*Customer Churn*) en Power BI
+# 📊 Estudio de Caso: Análisis de Cancelación de Clientes (*Customer Churn*) en Power BI
 
 ## 📌 **Descripción del Proyecto**
 
