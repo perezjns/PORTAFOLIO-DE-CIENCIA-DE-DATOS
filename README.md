@@ -8,23 +8,24 @@
 
 ## 📁 Estructura del Repositorio
 
-A continuación se detallan los módulos y carpetas principales que componen este portafolio. Puedes acceder directamente a cada sección explorando las carpetas del repositorio:
+A continuación se detallan los módulos y carpetas principales que componen este portafolio:
 
 | Carpeta / Proyecto | Descripción | Tecnologías Clave |
 | :--- | :--- | :--- |
-| `📁 Power Bi-ANÁLISIS DE CANCELACIÓN DE CLI...` | Dashboard interactivo enfocado en el análisis de abandono/churn de clientes, métricas de retención y comportamiento de usuarios. | Power BI, DAX, Power Query |
-| `📁 Power Bi-GESTION DE ARCHIVOS MULTIFOR...` | Modelado dimensional y visualización analítica a partir del cruce relacional de fuentes heterogéneas. | Power BI, DAX, Data Modeling |
-| `📁 Python-ANÁLISIS EXPLORATORIO DE DATOS` | Diagnóstico estadístico, limpieza transaccional y visualización avanzada de series de ventas globales. | Python, Seaborn, Pandas, Estadística |
-| `📁 Python-GESTIÓN DE ARCHIVOS MULTIFORMATO` | Ingesta, normalización y cruce relacional dinámico de fuentes heterogéneas (CSV, SQLite, JSON anidados). | Python, Pandas, SQLite, JSON |
-| `📁 Python-LIMPIEZA Y NORMALIZACIÓN DE DATOS` | Automatización del tratamiento y curación de datos mediante pipelines ETL robustos para catálogos inmobiliarios. | Python, Pandas, ETL, Sanitización |
-| `📁 Python-MODELADO Y PREDICCIÓN` | Construcción de modelos predictivos de clasificación/regresión y optimización de hiperparámetros. | Scikit-Learn, Pandas, Métricas ML |
+| 📁 `Power Bi-ANÁLISIS DE CANCELACIÓN DE CLI...` | Dashboard interactivo enfocado en el análisis de abandono/churn de clientes, métricas de retención y comportamiento de usuarios. | Power BI, DAX, Power Query |
+| 📁 `Power Bi-CUADRO DE MANDOS CASO Adven...` | Cuadro de mandos corporativo analizando transacciones, rendimiento de productos por género/canal, volumen por categoría y rentabilidad financiera (Año 2021). | Power BI, DAX, Power Query, Star Schema |
+| 📁 `Power Bi-GESTION DE ARCHIVOS MULTIFOR...` | Modelado dimensional y visualización analítica a partir del cruce relacional de fuentes heterogéneas. | Power BI, DAX, Data Modeling |
+| 📁 `Python-ANÁLISIS EXPLORATORIO DE DATOS` | Diagnóstico estadístico, limpieza transaccional y visualización avanzada de series de ventas globales. | Python, Seaborn, Pandas, Estadística |
+| 📁 `Python-GESTIÓN DE ARCHIVOS MULTIFORMATO` | Ingesta, normalización y cruce relacional dinámico de fuentes heterogéneas (CSV, SQLite, JSON anidados). | Python, Pandas, SQLite, JSON |
+| 📁 `Python-LIMPIEZA Y NORMALIZACIÓN DE DATOS` | Automatización del tratamiento y curación de datos mediante pipelines ETL robustos para catálogos inmobiliarios. | Python, Pandas, ETL, Sanitización |
+| 📁 `Python-MODELADO Y PREDICCIÓN` | Construcción de modelos predictivos de clasificación/regresión y optimización de hiperparámetros. | Scikit-Learn, Pandas, Métricas ML |
 
 ---
 
 ## 🚀 Proyectos Destacados
 
 ### 📉 1. Análisis Exploratorio de Datos (`Python-ANÁLISIS EXPLORATORIO DE DATOS`)
-Este módulo aborda un estudio analítico profundo enfocado en la depuración transaccional y la evaluación de tendencias estacionales del negocio.
+Aborda un estudio analítico profundo enfocado en la depuración transaccional y la evaluación de tendencias estacionales del negocio.
 * **Depuración y Calidad del Dato:** Filtrado sistemático de registros corruptos (`###ERROR###`, `-99999`) y aislamiento de duplicados basados en lógica de estados.
 * **Análisis de Series Temporales:** Modelado cronológico de ingresos mensuales consolidados, identificando valles de mercado y picos de facturación históricos.
 * **Evaluación de Dispersión:** Análisis estadístico de correlaciones empleando escalas logarítmicas para corregir la alta variabilidad en precios unitarios y volúmenes de pedido.
@@ -47,7 +48,7 @@ Desarrollo de modelos predictivos con metodologías rigurosas para garantizar ta
 ### 📊 5. Business Intelligence & Dashboards (`Power Bi-*`)
 Diseño e implementación de modelos de datos analíticos y cuadros de mando interactivos en Power BI.
 * **Análisis de Cancelación de Clientes (*Churn Analysis*):** Visualización de indicadores clave (KPIs) para la retención y pérdida de clientes.
-* **Modelado Dimensional:** Creación de esquemas en estrella y uso de expresiones DAX para cálculos temporales e indicadores dinámicos.
+* **Cuadro de Mandos Adventure Works Cycles:** Solución corporativa estructurada en un esquema en estrella (*Star Schema*) para auditar transacciones, evaluar rendimiento comercial por género/canal, analizar la demanda mediante *Small Multiples* y controlar métricas financieras y de márgenes (`Profit`, `Profit_Margin`) en **2021**.
 
 ---
 
@@ -55,7 +56,7 @@ Diseño e implementación de modelos de datos analíticos y cuadros de mando int
 
 * **Lenguajes:** Python, SQL, DAX
 * **Librerías de Ciencia de Datos:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn, SQLite3
-* **Business Intelligence:** Microsoft Power BI, Power Query
+* **Business Intelligence:** Microsoft Power BI, Power Query, Modelado Dimensional (*Star Schema*)
 * **Entornos de Trabajo:** Jupyter Notebooks, VS Code
 * **Control de Versiones:** Git y GitHub
 
@@ -65,7 +66,7 @@ Diseño e implementación de modelos de datos analíticos y cuadros de mando int
 
 Si deseas replicar los análisis y ejecutar los scripts o notebooks en tu entorno local, sigue estos pasos:
 
-1. **Clonar el repositorio:**
+1. Clonar el repositorio:
    ```bash
    git clone [https://github.com/perezjsn/PORTAFOLIO-DE-CIENCIA-DE-DATOS.git](https://github.com/perezjsn/PORTAFOLIO-DE-CIENCIA-DE-DATOS.git)
    cd PORTAFOLIO-DE-CIENCIA-DE-DATOS
