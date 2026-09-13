@@ -15,6 +15,7 @@ A continuación se detallan los módulos y carpetas principales que componen est
 | 📁 `Power Bi-ANÁLISIS DE CANCELACIÓN DE CLI...` | Dashboard interactivo enfocado en el análisis de abandono/churn de clientes, métricas de retención y comportamiento de usuarios. | Power BI, DAX, Power Query |
 | 📁 `Power Bi-CUADRO DE MANDOS CASO Adven...` | Cuadro de mandos corporativo analizando transacciones, rendimiento de productos por género/canal, volumen por categoría y rentabilidad financiera (Año 2021). | Power BI, DAX, Power Query, Star Schema |
 | 📁 `Power Bi-GESTION DE ARCHIVOS MULTIFOR...` | Modelado dimensional y visualización analítica a partir del cruce relacional de fuentes heterogéneas. | Power BI, DAX, Data Modeling |
+| 📁 `Power Bi-HR ANALYTICS` | Cuadro de mandos enfocado en la analítica de recursos humanos, gestión de talento, métricas de personal y rotación de empleados. | Power BI, DAX, HR Metrics |
 | 📁 `Python-ANÁLISIS EXPLORATORIO DE DATOS` | Diagnóstico estadístico, limpieza transaccional y visualización avanzada de series de ventas globales. | Python, Seaborn, Pandas, Estadística |
 | 📁 `Python-GESTIÓN DE ARCHIVOS MULTIFORMATO` | Ingesta, normalización y cruce relacional dinámico de fuentes heterogéneas (CSV, SQLite, JSON anidados). | Python, Pandas, SQLite, JSON |
 | 📁 `Python-LIMPIEZA Y NORMALIZACIÓN DE DATOS` | Automatización del tratamiento y curación de datos mediante pipelines ETL robustos para catálogos inmobiliarios. | Python, Pandas, ETL, Sanitización |
@@ -49,6 +50,7 @@ Desarrollo de modelos predictivos con metodologías rigurosas para garantizar ta
 Diseño e implementación de modelos de datos analíticos y cuadros de mando interactivos en Power BI.
 * **Análisis de Cancelación de Clientes (*Churn Analysis*):** Visualización de indicadores clave (KPIs) para la retención y pérdida de clientes.
 * **Cuadro de Mandos Adventure Works Cycles:** Solución corporativa estructurada en un esquema en estrella (*Star Schema*) para auditar transacciones, evaluar rendimiento comercial por género/canal, analizar la demanda mediante *Small Multiples* y controlar métricas financieras y de márgenes (`Profit`, `Profit_Margin`) en **2021**.
+* **HR Analytics (`Power Bi-HR ANALYTICS`):** Panel interactivo diseñado para la gestión de recursos humanos, centrado en medir métricas de talento, clima laboral, rotación de personal y optimización de capital humano.
 
 ---
 
