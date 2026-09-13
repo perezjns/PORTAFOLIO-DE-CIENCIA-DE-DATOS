@@ -32,7 +32,7 @@ El proyecto implementa un modelo dimensional relacional optimizado para consulta
 
 ## 📊 Análisis de Resultados y Cuadro de Mando (Report View)
 
-El cuadro de mândo desarrollado en Power BI integra las siguientes secciones estratégicas:
+El cuadro de mando desarrollado en Power BI integra las siguientes secciones estratégicas:
 
 *   🗂️ **Executive Workforce Overview:** Panel general de control de alto nivel para supervisar la demografía de la plantilla y la distribución de la masa salarial por departamento y rol.
 *   📉 **Attrition & Retention Analytics:** Análisis de la tasa de rotación (*Attrition Rate*), impacto de horas extra, distancia al hogar y estancamiento promocional para la retención preventiva de talento.
@@ -51,3 +51,38 @@ DIVIDE(
     CALCULATE([Total Employees], DimEmployee[Attrition] = "Yes"),
     [Total Employees]
 )
+```
+
+### Discrepancia en la Evaluación de Desempeño
+```dax
+Rating Discrepancy = 
+AVERAGE(PerformanceRating[ManagerRating]) - AVERAGE(PerformanceRating[SelfRating])
+```
+
+### Compensación Total y Beneficios
+```dax
+Total Compensation & Benefits = 
+SUM(DimEmployee[Salary]) + SUMX(DimEmployee, DimEmployee[StockOptionLevel] * 1000)
+```
+
+---
+
+## 🚀 Cómo Utilizar Este Proyecto
+
+### Requisitos Previos
+Asegúrese de tener instalado Power BI Desktop para interactuar con las visualizaciones y el modelo relacional.
+
+### Ejecución y Exploración
+Clone o descargue el repositorio en su directorio local:
+
+```bash
+git clone https://github.com/tu-usuario/PORTAFOLIO-DE-CIENCIA-DE-DATOS.git
+```
+
+* Abra el archivo principal del modelo: `HR Analytics.pbix`
+* Consulte la documentación técnica y funcional detallada en el archivo `Informe_Detallado_PowerBI_HR.pdf` para revisar el desglose completo de medidas DAX y análisis de negocio por cada sección.
+
+---
+
+## 📅 Estado del Desarrollo
+**Producción:** Modelo consolidado, refactorizado, con diseño dimensional en estrella optimizado, medidas DAX validadas y listo para su presentación en el Portafolio de Ciencia de Datos y Business Intelligence.
