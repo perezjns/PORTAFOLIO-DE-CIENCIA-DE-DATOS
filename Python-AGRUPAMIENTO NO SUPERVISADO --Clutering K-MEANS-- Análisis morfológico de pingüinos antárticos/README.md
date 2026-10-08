@@ -34,4 +34,15 @@ El análisis no supervisado se estructura en dos enfoques complementarios que pe
 
 ---
 
-¿Te gustaría profundizar en la interpretación de los centroides o visualizar las métricas de evaluación de silueta de alguno de estos modelos?
+## 🔬 Profundización Analítica: Centroides y Métricas de Evaluación
+
+### 1. Interpretación de Centroides en el Modelo B ($k = 3$ / Especies Biológicas)
+Al fijar $k = 3$ y aislar las variables biométricas, el algoritmo K-Means agrupa a las observaciones buscando los centros de gravedad (centroides) en un espacio de 4 dimensiones. El DataFrame resultante **`stat_penguins`** resume las medias físicas de cada clúster, permitiendo trazar un perfil biológico claro:
+* **Clúster de mayor envergadura (Gentoo):** Representado por centroides con los valores más altos en longitud de aleta (`flipper_length_mm`) y masa corporal (`body_mass_g`), diferenciándose claramente por su gran tamaño y aletas alargadas.
+* **Clúster de pico pronunciado y alargado (Chinstrap):** Se caracteriza por presentar los valores máximos en la longitud del culmen (`culmen_length_mm`) en proporción a su cuerpo, junto con una profundidad de pico intermedia.
+* **Clúster compacto y de menor tamaño (Adelie):** Agrupa a los pingüinos con las menores dimensiones corporales y de aletas, destacando por una profundidad de culmen (`culmen_depth_mm`) proporcionalmente alta respecto a su longitud corta de pico.
+
+### 2. Evaluación de Rendimiento y Coeficiente de Silueta
+Para validar qué tan bien definidos y separados están los clústeres, se utiliza el **Coeficiente de Silueta** (cuyo valor oscila entre -1 y +1):
+* **Modelo A ($k = 4$ con Sexo):** Al incorporar el dimorfismo sexual, las especies se subdividen sutilmente (por ejemplo, machos y hembras de una misma especie pueden formar subgrupos o desplazar los límites del clúster). El coeficiente de silueta en este modelo ayuda a comprobar si los 4 grupos mantienen una cohesión interna aceptable sin solapamientos excesivos, reflejando cómo el género influye en la variabilidad morfológica.
+* **Modelo B ($k = 3$ sin Sexo):** Al eliminar el factor sexual, las siluetas tienden a reflejar de forma más pura la separación natural entre las tres especies de la Estación Palmer. Un puntaje de silueta cercano o superior al promedio general indica que los centroides representan fronteras naturales bien delimitadas entre **Adelie**, **Chinstrap** y **Gentoo**.
