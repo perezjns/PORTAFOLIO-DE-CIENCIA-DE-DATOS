@@ -48,4 +48,34 @@ Ingeniería y preparación de datos (*Data Preparation*) avanzada, transformando
 * **Automatización:** Diseño de un pipeline modular (`pipeline_inmuebles.py`) bajo una arquitectura limpia y reutilizable.
 * **Sanitización Inteligente:** Imputación avanzada de valores nulos mediante lógicas de agregación por zonas geográficas y eliminación controlada de valores atípicos (*outliers*).
 
-### 🤖 5. Modelado y Predicción con Python
+### 🤖 5. Modelado y Predicción con Python (Python-MODELADO Y PREDICCIÓN)
+Desarrollo de modelos predictivos con metodologías rigurosas para garantizar tanto la precisión matemática como la interpretabilidad de los resultados.
+* **Ingeniería de Características (Feature Engineering):** Normalización, escalado estadístico y codificación avanzada de variables categóricas.
+* **Modelado y Evaluación:** Implementación de algoritmos supervisados evaluados mediante métricas robustas de rendimiento ($R^2$, $RMSE$, precisión y curvas $ROC\text{-}AUC$).
+
+### 📊 6. Business Intelligence & Dashboards (Power Bi-*)
+Diseño e implementación de modelos de datos analíticos y cuadros de mando interactivos en Power BI.
+* **Análisis de Cancelación de Clientes (Churn Analysis):** Visualización de indicadores clave (KPIs) para la retención y pérdida de clientes.
+* **Cuadro de Mandos Adventure Works Cycles:** Solución corporativa estructurada en un esquema en estrella (*Star Schema*) para auditar transacciones, evaluar rendimiento comercial por género/canal, analizar la demanda mediante *Small Multiples* y controlar métricas financieras y de márgenes (*Profit*, *Profit_Margin*) en 2021.
+* **HR Analytics (Power Bi-HR ANALYTICS):** Panel interactivo diseñado para la gestión de recursos humanos, centrado en medir métricas de talento, clima laboral, rotación de personal y optimización de capital humano.
+
+---
+
+## 🛠️ Tecnologías y Herramientas
+
+* **Lenguajes:** Python, SQL, DAX
+* **Librerías de Ciencia de Datos & ML:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn, SQLite3
+* **Business Intelligence:** Microsoft Power BI, Power Query, Modelado Dimensional (Star Schema)
+* **Entornos de Trabajo:** Jupyter Notebooks, VS Code
+* **Control de Versiones:** Git y GitHub
+
+---
+
+## ⚙️ Cómo Ejecutar los Proyectos Localmente
+
+Si deseas replicar los análisis y ejecutar los scripts o notebooks en tu entorno local, sigue estos pasos:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/perezjns/PORTAFOLIO-DE-CIENCIA-DE-DATOS.git](https://github.com/perezjns/PORTAFOLIO-DE-CIENCIA-DE-DATOS.git)
+   cd PORTAFOLIO-DE-CIENCIA-DE-DATOS
