@@ -9,7 +9,7 @@ Proyecto de ciencia de datos desarrollado para aplicar técnicas de aprendizaje 
 ---
 
 ## 📊 Descripción del Conjunto de Datos (`penguins.csv`)
-El conjunto de datos consta de 332 registros limpios y 5 columnas principales:
+El conjunto de datos consta de registros limpios y 5 columnas principales:
 * **`culmen_length_mm`**: Longitud del culmen (pico) en milímetros.
 * **`culmen_depth_mm`**: Profundidad del culmen en milímetros.
 * **`flipper_length_mm`**: Longitud de la aleta en milímetros.
@@ -18,57 +18,20 @@ El conjunto de datos consta de 332 registros limpios y 5 columnas principales:
 
 ---
 
-## ⚙️ Metodología y Enfoques Analíticos
+## ⚙️ Metodología y Enfoques Analíticos Detallados
 
-El repositorio evalúa dos enfoques analíticos complementarios para entender la estructura de los datos:
+El análisis no supervisado se estructura en dos enfoques complementarios que permiten examinar tanto el impacto de las características demográficas como la separación morfológica pura de las especies:
 
 1. **Modelo A (Con Variable de Sexo / K Óptimo):**
-   * Codifica la variable categórica `sex` mediante codificación *one-hot* (`pd.get_dummies`).
-   * Aplica estandarización con `StandardScaler`.
-   * Evalúa la inercia (Método del Codo) y el **Coeficiente de Silueta**, encontrando que particiones de $k = 4$ capturan tanto las diferencias morfológicas entre especies como el dimorfismo sexual intrínseco.
+   * **Transformación de Variables:** Incorpora la variable cualitativa `sex` convirtiéndola en variables indicadoras binarias (*one-hot encoding*) mediante codificación de características categóricas.
+   * **Estandarización:** Se aplica un escalador estándar para normalizar todas las magnitudes numéricas y binarias, asegurando que ninguna escala domine sobre las demás en el cálculo de distancias euclidianas del algoritmo.
+   * **Evaluación de Clústeres:** Mediante el análisis de inercia (Método del Codo) y el Coeficiente de Silueta, este enfoque identifica que un valor óptimo de $k$ permite capturar de manera sobresaliente tanto las diferencias anatómicas entre especies como la variabilidad por dimorfismo sexual.
 
 2. **Modelo B (Excluyendo Sexo / Enfoque Biológico Estricto de Especies):**
-   * Aisla exclusivamente las 4 variables físicas cuantitativas.
-   * Fija $k = 3$ para alinear el modelo con las tres especies nativas conocidas de la región: **Adelie**, **Chinstrap** y **Gentoo**.
-   * Genera el DataFrame resumido de medias **`stat_penguins`** requerido para la validación analítica.
+   * **Aislamiento Biométrico:** Filtra exclusivamente las 4 variables cuantitativas puras (`culmen_length_mm`, `culmen_depth_mm`, `flipper_length_mm`, `body_mass_g`) para evitar sesgos por género.
+   * **Definición de K:** Se fija de forma supervisada $k = 3$ para alinear estrictamente el agrupamiento matemático con las tres especies nativas y conocidas de la región antártica estudiada: **Adelie**, **Chinstrap** y **Gentoo**.
+   * **Validación Analítica (`stat_penguins`):** Agrupa el conjunto de datos resultante por clústeres para calcular las medias de cada variable física, generando el DataFrame resumido **`stat_penguins`** que valida la coherencia biológica de las agrupaciones generadas.
 
 ---
 
-## 🚀 Código de Implementación en Python
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import silhouette_score
-
-# 1. Carga del conjunto de datos
-penguins_df = pd.read_csv("penguins.csv")
-
-# ==========================================
-# MODELO A: Con todas las variables (incluyendo 'sex')
-# ==========================================
-df_encoded_A = pd.get_dummies(penguins_df, columns=['sex'], drop_first=True)
-scaler_A = StandardScaler()
-df_scaled_A = scaler_A.fit_transform(df_encoded_A)
-
-kmeans_A = KMeans(n_clusters=4, random_state=42, n_init=10)
-penguins_df['cluster_modelo_A'] = kmeans_A.fit_predict(df_scaled_A)
-
-# ==========================================
-# MODELO B: Excluyendo 'sex' (k = 3 para Especies)
-# ==========================================
-numeric_cols = ['culmen_length_mm', 'culmen_depth_mm', 'flipper_length_mm', 'body_mass_g']
-df_numeric_B = penguins_df[numeric_cols]
-
-scaler_B = StandardScaler()
-df_scaled_B = scaler_B.fit_transform(df_numeric_B)
-
-kmeans_B = KMeans(n_clusters=3, random_state=42, n_init=10)
-penguins_df['cluster_modelo_B'] = kmeans_B.fit_predict(df_scaled_B)
-
-# Creación del DataFrame de estadísticas promedio por clúster
-stat_penguins = penguins_df.groupby('cluster_modelo_B')[numeric_cols].mean()
-print("--- DataFrame stat_penguins ---")
-print(stat_penguins)
+¿Te gustaría profundizar en la interpretación de los centroides o visualizar las métricas de evaluación de silueta de alguno de estos modelos?
