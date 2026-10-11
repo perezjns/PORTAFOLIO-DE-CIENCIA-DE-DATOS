@@ -134,5 +134,6 @@ La solución podría contribuir a mejorar la planificación de la disponibilidad
 - Prevención de fuga de información (*data leakage*).
 - Aplicación del análisis predictivo a problemas empresariales.
 
+🏷️ Tecnologías y etiquetas
 
 `Python` · `Pandas` · `Scikit-learn` · `Machine Learning` · `Data Science` · `Data Analytics` · `Regression` · `Feature Engineering`
