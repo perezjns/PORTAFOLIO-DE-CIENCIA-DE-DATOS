@@ -1,11 +1,9 @@
 📊 Portafolio de Ciencia de Datos & Ingeniería de Datos
 
 🔍 Sobre este Portafolio
-
 ¡Bienvenido a mi espacio de Ciencia de Datos e Ingeniería de Datos! En este repositorio comparto proyectos prácticos enfocados en extraer valor real de los datos, diseñar pipelines automatizados de extremo a extremo (End-to-End), construir modelos predictivos, desarrollar dashboards de Business Intelligence y resolver problemas de negocio complejos mediante análisis estadístico y aprendizaje automático (Machine Learning).
 
 📁 Estructura del Repositorio
-
 A continuación se detallan los módulos y carpetas principales que componen este portafolio:
 
 | Carpeta / Proyecto | Descripción | Tecnologías Clave |
@@ -19,18 +17,17 @@ A continuación se detallan los módulos y carpetas principales que componen est
 | 📁 **Python-GESTIÓN DE ARCHIVOS MULTIFORMATO** | Ingesta, normalización y cruce relacional dinámico de fuentes heterogéneas (CSV, SQLite, JSON anidados). | Python, Pandas, SQLite, JSON |
 | 📁 **Python-LIMPIEZA Y NORMALIZACIÓN DE DATOS** | Automatización del tratamiento y curación de datos mediante pipelines ETL robustos para catálogos inmobiliarios. | Python, Pandas, ETL, Sanitización |
 | 📁 **Python-MODELADO Y PREDICCIÓN GÉNERO SPOTIFY** | Construcción de modelos predictivos de clasificación/regresión y optimización de hiperparámetros. | Scikit-Learn, Pandas, Métricas ML |
+| 📁 **Python-OPTIMIZACIÓN DE INVENTARIO MEDIANTE MODELOS DE REGRESIÓN Y ML** | Modelado predictivo y algoritmos de Machine Learning aplicados a la optimización de inventarios, predicción de demanda y gestión eficiente de stock. | Python, Scikit-Learn, Pandas, Regresión, Machine Learning |
 | 📁 **Python-SEMBRAR CON ÉXITO-MACHINE LEARNING PARA ELEGIR CULTIVO** | Selección óptima de cultivos agrícolas analizando nutrientes del suelo (N,P,K,pH) mediante evaluación univariable con Regresión Logística y métricas F1-Score. | Python, Scikit-Learn, Pandas, Seaborn |
 
 🛠️ Tecnologías y Herramientas
-
-* **Lenguajes:** Python, SQL, DAX
-* **Librerías de Ciencia de Datos & ML:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn, SQLite3
-* **Business Intelligence:** Microsoft Power BI, Power Query, Modelado Dimensional (Star Schema)
-* **Entornos de Trabajo:** Jupyter Notebooks, VS Code
-* **Control de Versiones:** Git y GitHub
+- **Lenguajes:** Python, SQL, DAX
+- **Librerías de Ciencia de Datos & ML:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn, SQLite3
+- **Business Intelligence:** Microsoft Power BI, Power Query, Modelado Dimensional (Star Schema)
+- **Entornos de Trabajo:** Jupyter Notebooks, VS Code
+- **Control de Versiones:** Git y GitHub
 
 ⚙️ Cómo Ejecutar los Proyectos Localmente
-
 Si deseas replicar los análisis y ejecutar los scripts o notebooks en tu entorno local, sigue estos pasos:
 
 1. Clonar el repositorio:
