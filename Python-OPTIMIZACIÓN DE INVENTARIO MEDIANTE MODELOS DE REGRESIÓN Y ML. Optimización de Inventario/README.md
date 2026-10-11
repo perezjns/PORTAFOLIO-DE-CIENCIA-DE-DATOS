@@ -22,8 +22,7 @@ El análisis se basó en el procesamiento de características cuantitativas y ca
 El desarrollo del proyecto se estructuró en cuatro fases clave:
 
 1. **Ingeniería de la Variable Objetivo**: 
-   Se convirtieron las fechas de alquiler y devolución a formato `datetime` para calcular la duración exacta de cada transacción en días:
-   $$\text{rental\_length\_days} = \frac{\text{return\_date} - \text{rental\_date}}{\text{24 horas}}$$
+   Se convirtieron las fechas de alquiler y devolución a formato `datetime` para calcular la duración exacta de cada transacción en días.
 
 2. **Ingeniería de Características en Texto**: 
    A partir de la columna categórica `special_features`, se aplicó procesamiento de texto para extraer subcadenas específicas, generando dos variables indicadoras binarias (dummies):
