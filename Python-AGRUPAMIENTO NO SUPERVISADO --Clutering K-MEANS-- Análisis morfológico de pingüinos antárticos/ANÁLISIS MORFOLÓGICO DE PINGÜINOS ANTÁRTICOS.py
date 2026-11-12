@@ -1,11 +1,15 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 
-# 1. Carga del conjunto de datos
-penguins_df = pd.read_csv("penguins.csv")
+# 1. Carga del conjunto de datos usando la ruta absoluta del directorio actual del script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(script_dir, "penguins.csv")
+
+penguins_df = pd.read_csv(csv_path)
 print("--- Primeras filas del dataset original ---")
 print(penguins_df.head())
 
@@ -42,18 +46,15 @@ for k in range(2, 8):
     score_B = silhouette_score(df_scaled_B, labels_temp_B)
     print(f"Modelo B (sin sex) - k={k}: Coeficiente de Silueta = {score_B:.4f}")
 
-# Nota: Si tu ejercicio específico de DataCamp utiliza k=4 para el DataFrame final, 
-# puedes ajustar n_clusters aquí según la validación del reto.
 optimal_clusters = 4 
 kmeans_B = KMeans(n_clusters=optimal_clusters, random_state=42, n_init=10)
 penguins_df['cluster_modelo_B'] = kmeans_B.fit_predict(df_scaled_B)
 
 # ==========================================
-# CREACIÓN DEL DATAFRAME REQUERIDO POR DATACAMP
+# CREACIÓN DEL DATAFRAME REQUERIDO
 # ==========================================
-# stat_penguins: media de las variables numéricas originales por clúster (sin columnas no numéricas)
 stat_penguins = penguins_df.groupby('cluster_modelo_B')[numeric_cols].mean()
-print("\n--- DataFrame stat_penguins requerido por DataCamp ---")
+print("\n--- DataFrame stat_penguins requerido ---")
 print(stat_penguins)
 
 # 2. Resumen estadístico comparativo
