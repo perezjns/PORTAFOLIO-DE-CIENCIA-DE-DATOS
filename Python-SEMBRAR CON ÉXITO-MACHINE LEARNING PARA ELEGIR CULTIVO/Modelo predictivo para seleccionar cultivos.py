@@ -1,38 +1,59 @@
+import os
+import warnings
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+from sklearn.exceptions import ConvergenceWarning
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score
 from sklearn.model_selection import train_test_split
 
-# 1. Cargar datos
-crops = pd.read_csv("soil_measures.csv")
+# Silenciar avisos menores de convergencia para mantener la terminal limpia
+warnings.filterwarnings("ignore", category=ConvergenceWarning)
+
+# =========================================================
+# 1. CARGAR DATOS (Con ruta dinámica robusta)
+# =========================================================
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(script_dir, "soil_measures.csv")
+
+crops = pd.read_csv(csv_path)
 
 # Eliminar posibles espacios en blanco invisibles en las columnas
 crops.columns = crops.columns.str.strip()
 
-# 2. Separar X e y
+# =========================================================
+# 2. SEPARAR X e y
+# =========================================================
 X = crops.drop(columns=["crop"])
 y = crops["crop"]
 
-# 3. Dividir datos
+# =========================================================
+# 3. DIVIDIR DATOS (70% entrenamiento / 30% prueba)
+# =========================================================
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42
 )
 
-# 4. Modelado y evaluación univariable
+# =========================================================
+# 4. MODELADO Y EVALUACIÓN UNIVARIABLE
+# =========================================================
 features = X.columns
 feature_performance = {}
 
 for feature in features:
-    model = LogisticRegression(multi_class="multinomial", max_iter=1000)
+    # max_iter incrementado a 2000 para asegurar una convergencia óptima
+    model = LogisticRegression(max_iter=2000)
     model.fit(X_train[[feature]], y_train)
     y_pred = model.predict(X_test[[feature]])
 
     score = f1_score(y_test, y_pred, average="weighted")
     feature_performance[feature] = score
 
-# 5. Obtener la mejor característica y calcular promedios
+# =========================================================
+# 5. OBTENER LA MEJOR CARACTERÍSTICA Y CALCULAR PROMEDIOS
+# =========================================================
 best_feature = max(feature_performance, key=feature_performance.get)
 best_predictive_feature = {best_feature: feature_performance[best_feature]}
 
@@ -41,8 +62,10 @@ promedio_por_cultivo = (
     crops.groupby("crop")[mejor_variable].mean().sort_values(ascending=False)
 )
 
+print(f"Mejor variable predictora identificada: {mejor_variable}")
+
 # =========================================================
-# GENERACIÓN DE GRÁFICOS
+# GENERACIÓN DE GRÁFICOS PROFESIONALES
 # =========================================================
 sns.set_theme(style="whitegrid")
 fig, axes = plt.subplots(1, 2, figsize=(18, 9))
@@ -89,7 +112,7 @@ axes[0].set_xlabel("Variable del Suelo", fontsize=11)
 axes[0].set_ylabel("F1-Score", fontsize=11)
 axes[0].set_ylim(0, max(feature_performance.values()) * 1.25)
 
-# --- Gráfico 2: Promedio de K (o mejor variable) por Cultivo ---
+# --- Gráfico 2: Promedio de la mejor variable por Cultivo ---
 df_prom = promedio_por_cultivo.reset_index()
 df_prom.columns = ["Cultivo", "Promedio"]
 
