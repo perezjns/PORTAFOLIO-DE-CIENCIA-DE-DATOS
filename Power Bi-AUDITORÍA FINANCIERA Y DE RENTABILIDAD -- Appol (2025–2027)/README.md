@@ -56,4 +56,22 @@ Todas las métricas se centralizan en la tabla `Medidas`:
    * **Dispositivos** *(PC, Celulares, Tablets, Accesorios)* aporta el **75,71 %** de los ingresos (USD 2.546,5 M), pero opera con un margen estrecho del **13,91 %**.
    * **Digital** *(Música, Aplicaciones, TV)* representa el **24,29 %** de los ingresos (USD 816,9 M), pero genera el **47,23 %** de la utilidad total (USD 316,9 M) con un margen promedio del **38,80 %**.
 3. **Liderazgo y aceleración regional:**
-   * **América** lidera en utilidad neta (USD 262,70 M; 39,14 % del total; margen 22,49 %), seguida de **Asia** (USD 236
+   * **América** lidera en utilidad neta (USD 262,70 M; 39,14 % del total; margen 22,49 %), seguida de **Asia** (USD 236,20 M; margen 17,14 %).
+   * **Europa** es el principal motor de expansión con un crecimiento acumulado del **+71,87 %** en utilidad entre 2025 y 2027.
+4. **Concentración geográfica (Pareto):** Los **5 principales países** (Estados Unidos, China, Alemania, India y Canadá) concentran el **68,83 %** de la utilidad global. A nivel granular existen **105 registros trimestrales deficitarios** (`Gastos > Ingresos`), todos concentrados en la categoría *Dispositivos*.
+
+---
+
+## 🖥️ Componentes e Interactividad del Tablero
+
+* **Tarjeta KPI (2 × 2):** Resumen ejecutivo de Ingresos, Gastos, Utilidad y Margen.
+* **Evolución Temporal:** Gráfico de barras apiladas por `Año` y `Continente`, acompañado de un gráfico de líneas trimestral (`Año` + `Trimestre`).
+* **Distribución Geográfica:** Gráfico de anillo por `Continente`, mapa de burbujas por `País` y tabla ranking de los 56 países con barras de datos en `Utilidad` y formato condicional de gradiente (rojo a verde) en `Margen`.
+* **Segmentadores y Marcadores:** Filtros interactivos por `Año`, `Categoria Producto` y `Tipo Producto`, junto con un botón de acción superior derecho vinculado a un marcador (*Bookmark*) para restablecer todos los filtros con un clic.
+
+---
+
+## 🚀 Requisitos y Uso
+
+1. Abrir **`Reporte Appol.pbix`** en **Power BI Desktop** (versión Octubre 2024 o superior).
+2. Si deseas actualizar la fuente de datos, asegúrate de apuntar la ruta de origen en *Transformar datos > Configuración de origen de datos* hacia la ubicación local de **`Appol Datos.xlsx`**.
